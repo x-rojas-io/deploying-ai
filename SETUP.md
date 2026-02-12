@@ -70,3 +70,23 @@ deactivate
 ---
 
 For questions or issues, please contact the Deploying AI Module learning support team or email courses.dsi@utoronto.ca.
+
+## Troubleshooting
+
+### Failed to build `av`
+
+If you encounter an error "Failed to build 'av'" or "You are REQUIRED to use ffmpeg 7", this usually means that a pre-built binary is not available for your system and Python version. To fix this, you must install `ffmpeg` and `pkg-config`.
+
+**macOS (using Homebrew)**:
+```bash
+brew install ffmpeg pkg-config
+```
+
+**Linux (Ubuntu/Debian)**:
+```bash
+sudo apt-get update && sudo apt-get install -y libavdevice-dev libavfilter-dev libopus-dev libvpx-dev pkg-config
+```
+*Note: You may need a newer version of ffmpeg (version 7) than what is available in default repositories.*
+
+**Windows**:
+Pre-built wheels are usually available. If you encounter this error on Windows, ensure you are using a supported Python version (3.10-3.13) or check the [PyAV documentation](https://pyav.org/docs/stable/overview/installation.html).
